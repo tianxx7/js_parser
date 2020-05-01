@@ -15,9 +15,10 @@ rl.on('line',function(line){
         process.exit();
     }
     var code = line
-    // var tokenReader = lexer.tokenize(code);
-    // console.log(tokenReader);
+    var tokenReader = lexer.tokenize(code);
+    //console.log(tokenReader);
     var ast = parser.parse(code);
+    //console.log(ast)
     var result = script.evalfunc(ast);
     console.log(result);
 })
